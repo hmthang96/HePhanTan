@@ -1,0 +1,98 @@
+2019-11-27 09:34:08,221 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 09:34:20,248 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 20.337 seconds (JVM running for 22.56)
+2019-11-27 09:36:51,893 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] prueba1
+2019-11-27 09:36:51,896 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] NUMERO2
+2019-11-27 09:37:05,247 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] prueba1
+2019-11-27 09:46:29,229 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 09:46:33,751 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 6.834 seconds (JVM running for 756.063)
+2019-11-27 09:49:09,066 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 09:49:45,461 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 09:49:57,274 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 18.931 seconds (JVM running for 20.248)
+2019-11-27 09:51:59,881 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 09:52:04,167 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 6.65 seconds (JVM running for 147.141)
+2019-11-27 09:53:31,499 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-3-2] null
+2019-11-27 09:57:23,880 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 09:57:28,830 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 7.38 seconds (JVM running for 471.804)
+2019-11-27 10:08:58,535 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 10:09:03,092 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 10.288 seconds (JVM running for 1166.066)
+2019-11-27 10:10:56,529 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 10:11:02,132 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 8.168 seconds (JVM running for 1285.106)
+2019-11-27 10:11:06,523 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-6-2] NUMERO2
+2019-11-27 10:23:49,016 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 10:23:54,721 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 9.344 seconds (JVM running for 2057.695)
+2019-11-27 10:25:53,805 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 10:25:57,870 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 6.045 seconds (JVM running for 2180.844)
+2019-11-27 10:57:32,193 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 10:57:43,681 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 18.155 seconds (JVM running for 20.026)
+2019-11-27 10:58:35,333 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] NUMERO2
+2019-11-27 10:58:49,177 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] prueba1
+2019-11-27 11:17:40,264 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 11:17:44,721 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 6.77 seconds (JVM running for 1221.066)
+2019-11-27 11:18:35,045 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 11:18:39,787 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 6.762 seconds (JVM running for 1276.132)
+2019-11-27 11:18:40,326 INFO com.bootcamp.springboot.app.student.controller.StudentController [http-nio-8007-exec-1] Person info retrieved. Content: {"scanAvailable":true}
+2019-11-27 11:18:40,348 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-4-2] prueba1
+2019-11-27 11:18:41,276 INFO com.bootcamp.springboot.app.student.controller.StudentController [http-nio-8007-exec-3] Person info retrieved. Content: {"scanAvailable":true}
+2019-11-27 11:18:41,280 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-4-2] prueba1
+2019-11-27 11:18:42,168 INFO com.bootcamp.springboot.app.student.controller.StudentController [http-nio-8007-exec-5] Person info retrieved. Content: {"scanAvailable":true}
+2019-11-27 11:18:42,174 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-4-2] prueba1
+2019-11-27 11:18:45,731 INFO com.bootcamp.springboot.app.student.controller.StudentController [http-nio-8007-exec-7] Person info retrieved. Content: {"scanAvailable":true}
+2019-11-27 11:18:45,736 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-4-2] NUMERO2
+2019-11-27 11:18:47,128 INFO com.bootcamp.springboot.app.student.controller.StudentController [http-nio-8007-exec-9] Person info retrieved. Content: {"scanAvailable":true}
+2019-11-27 11:18:47,137 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-4-2] NUMERO2
+2019-11-27 11:19:33,140 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 11:19:37,254 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 6.399 seconds (JVM running for 1333.599)
+2019-11-27 11:41:11,001 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 11:47:04,996 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 11:47:10,210 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 8.287 seconds (JVM running for 2986.555)
+2019-11-27 12:34:25,173 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 12:35:29,166 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 12:43:37,178 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:14:58,483 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:47:05,435 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:47:58,282 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:49:07,433 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:52:04,955 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:54:10,364 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 14:56:04,160 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 15:00:16,494 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 15:04:00,821 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 15:04:50,570 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 15:05:04,358 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 18.49 seconds (JVM running for 20.233)
+2019-11-27 15:07:23,886 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] NUMERO2
+2019-11-27 15:07:35,029 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the studentNUMERO2
+2019-11-27 15:07:35,030 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the student with id123
+2019-11-27 15:07:39,942 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the studentprueba1
+2019-11-27 15:07:39,943 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the student with idABC
+2019-11-27 15:08:55,172 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the studentNUMERO2
+2019-11-27 15:08:55,173 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the student with id999
+2019-11-27 15:28:59,813 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the studentCarlos Villarreal Agama
+2019-11-27 15:28:59,814 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the student with id1
+2019-11-27 15:29:34,344 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 15:29:39,537 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 7.441 seconds (JVM running for 8.775)
+2019-11-27 15:31:17,058 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the studentCarlos Villarreal Agama
+2019-11-27 15:31:17,059 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Deleting the student with id1
+2019-11-27 15:54:58,127 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 15:55:07,419 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 15.312 seconds (JVM running for 16.834)
+2019-11-27 15:56:31,134 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Carlos Villarreal Agama
+2019-11-27 15:56:34,004 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Carlos Villarreal Agama
+2019-11-27 15:56:35,857 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Carlos Villarreal Agama
+2019-11-27 17:16:38,329 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 17:16:50,555 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 21.196 seconds (JVM running for 22.757)
+2019-11-27 17:17:32,291 INFO com.bootcamp.springboot.app.student.controller.StudentController [nioEventLoopGroup-2-2] Carlos Villarreal Agama
+2019-11-27 17:52:26,966 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2019-11-27 17:52:40,062 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringbootMicroserviceManageStudentApplication in 20.414 seconds (JVM running for 22.53)
+2019-11-27 19:40:29,551 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 19:40:40,456 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 17.397 seconds (JVM running for 18.822)
+2019-11-27 20:05:19,673 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 20:05:30,241 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 15.564 seconds (JVM running for 16.95)
+2019-11-27 20:15:09,022 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 20:15:21,797 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 17.827 seconds (JVM running for 19.238)
+2019-11-27 20:18:03,110 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 20:18:15,778 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 15.37 seconds (JVM running for 16.743)
+2019-11-27 20:21:29,368 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 20:21:42,024 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 15.624 seconds (JVM running for 16.997)
+2019-11-27 20:23:12,592 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 20:23:25,326 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 15.461 seconds (JVM running for 16.848)
+2019-11-27 20:56:22,319 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2019-11-27 20:56:37,610 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringbootMicroserviceManageStudentApplicationTests in 21.55 seconds (JVM running for 23.301)
