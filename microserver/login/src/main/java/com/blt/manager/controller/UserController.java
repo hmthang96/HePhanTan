@@ -14,10 +14,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @CrossOrigin(origins = "*")
     @PostMapping("/login")
     public ResponseEntity<UserResponse> checkLogin(@RequestBody User user) {
 
         return ResponseEntity.ok(userService.checkLogin(user));
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/logout")
+    public ResponseEntity<UserResponse> logout(@RequestBody User user) {
+
+        return ResponseEntity.ok(userService.logout(user));
+    }
+
 }

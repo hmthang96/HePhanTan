@@ -29,36 +29,49 @@ public class UserService {
         return response.getBody();
     }
 
-    public UserResponse checkLogin(User user) {
-        UserResponse userResponse = new UserResponse();
-        System.out.println(user.getPassword());
-        System.out.println(user.getUsername());
-        String password = user.getPassword();
+    public UserResponse callServerLogout(User user) {
+        RestTemplate restTemplate = new RestTemplate();
+        String fooResourceUrl
+                = "http://localhost:8081/user/logout";
+        ResponseEntity<UserResponse> response
+                = restTemplate.postForEntity(fooResourceUrl, user,UserResponse.class);
 
-        String username = user.getEmail();
-//        List<User> userList = userRepository.findAll();
-//        for (User user1:
-//             userList) {
-//            System.out.println(user1);
-//        }
-        System.out.println(username);
-        System.out.println(userRepository.findByEmail(username));
-        if (userRepository.findByEmail(username) == null) {
-
-                userResponse.setCode("001");
-                userResponse.setMessage("Sai tài khoản !");
-                System.out.println("001");
-        } else if (!userRepository.findByEmail(username).getPassword().equals(password)) {
-            userResponse.setCode("002");
-            userResponse.setMessage("Sai mật khẩu !");
-            System.out.println("002");
-        } else {
-            userResponse.setCode("000");
-            userResponse.setMessage("Success !");
-            System.out.println("000");
-        }
-
-        return userResponse;
+        response.toString();
+        return response.getBody();
     }
+
+
+
+//    public UserResponse checkLogin(User user) {
+//        UserResponse userResponse = new UserResponse();
+//        System.out.println(user.getPassword());
+//        System.out.println(user.getUsername());
+//        String password = user.getPassword();
+//
+//        String username = user.getEmail();
+////        List<User> userList = userRepository.findAll();
+////        for (User user1:
+////             userList) {
+////            System.out.println(user1);
+////        }
+//        System.out.println(username);
+//        System.out.println(userRepository.findByEmail(username));
+//        if (userRepository.findByEmail(username) == null) {
+//
+//                userResponse.setCode("001");
+//                userResponse.setMessage("Sai tài khoản !");
+//                System.out.println("001");
+//        } else if (!userRepository.findByEmail(username).getPassword().equals(password)) {
+//            userResponse.setCode("002");
+//            userResponse.setMessage("Sai mật khẩu !");
+//            System.out.println("002");
+//        } else {
+//            userResponse.setCode("000");
+//            userResponse.setMessage("Success !");
+//            System.out.println("000");
+//        }
+//
+//        return userResponse;
+//    }
 
 }
