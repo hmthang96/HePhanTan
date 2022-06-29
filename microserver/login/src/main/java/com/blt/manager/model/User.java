@@ -29,7 +29,17 @@ public class User implements Serializable {
     @Column(name = "token")
     private String token;
 
+    @Column(name = "status")
+    private int status;
     public User() {
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getToken() {

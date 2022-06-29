@@ -12,9 +12,10 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 
     User findByEmail(String email);
 
-
+    User findByToken(String token);
 
     User findByUsername(String username);
+
 
     List<User> findAll();
     List<User> findByIdGroup(Integer id);

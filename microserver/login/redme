@@ -1,0 +1,9 @@
+Các loại code: messenge
+000: Thành công
+001: Sai tài khoản
+002: Sai mật khẩu
+003: Sai token
+004: Không đủ quyền
+005: Tên đăng nhập đã tồn tại
+006: Email đã tồn tại
+007: Đăng ký thành công, đang chờ kiểm duyệt
