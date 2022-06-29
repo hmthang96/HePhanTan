@@ -20,4 +20,13 @@ public class UserController {
 
         return ResponseEntity.ok(userService.callServerCheckLogin(user));
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/logout")
+    public ResponseEntity<UserResponse> logout(@RequestBody User user) {
+
+        return ResponseEntity.ok(userService.callServerLogout(user));
+    }
+
+
 }

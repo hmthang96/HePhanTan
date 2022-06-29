@@ -1,5 +1,6 @@
 package com.blt.manager.service;
 
+import antlr.Token;
 import com.blt.manager.domain.UserResponse;
 import com.blt.manager.model.User;
 import com.blt.manager.repository.UserRepository;
@@ -18,27 +19,15 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public UserResponse callServerCheckLogin(User user) {
-        RestTemplate restTemplate = new RestTemplate();
-        String fooResourceUrl
-                = "http://localhost:8081/user/login";
-        ResponseEntity<UserResponse> response
-                = restTemplate.postForEntity(fooResourceUrl, user,UserResponse.class);
+    UserResponse userResponse;
 
-        response.toString();
-        return response.getBody();
-    }
 
     public UserResponse checkLogin(User user) {
-        UserResponse userResponse = new UserResponse();
+        userResponse = new UserResponse();
         String password = user.getPassword();
 
         String username = user.getEmail();
-//        List<User> userList = userRepository.findAll();
-//        for (User user1:
-//             userList) {
-//            System.out.println(user1);
-//        }
+
         if (userRepository.findByEmail(username) == null) {
 
                 userResponse.setCode("001");
@@ -58,5 +47,67 @@ public class UserService {
 
         return userResponse;
     }
+
+    public UserResponse logout(User user) {
+        userResponse = new UserResponse();
+        if (userRepository.findByToken(user.getToken()) == null) {
+            userResponse.setCode("003");
+            userResponse.setMessage("Sai token");
+        }else {
+            userRepository.findByToken(user.getToken()).setToken("");
+            userResponse.setCode("000");
+            userResponse.setMessage("Success !");
+        }
+
+        return userResponse;
+    }
+
+    public UserResponse register(User user) {
+        if (userRepository.findByUsername(user.getUsername())!= null){
+            userResponse.setCode("005");
+            userResponse.setMessage("Tên đăng nhập đã tồn tại");
+        } else if (userRepository.findByEmail(user.getEmail())!= null){
+            userResponse.setCode("006");
+            userResponse.setMessage("Email đã tồn tại");
+        } else {
+            user.setStatus(1);
+            userRepository.save(user);
+            userResponse.setCode("007");
+            userResponse.setMessage("Đăng ký thành công, đang chờ kiểm duyệt");
+        }
+
+        return userResponse;
+    }
+
+    public UserResponse checkRegister(User user){// gửi thông tin email của người cần phê duyệt và token của người đang phê duyệt
+        if(userRepository.findByToken(user.getToken()) == null){
+            userResponse.setCode("003");
+            userResponse.setMessage("Sai token");
+        } else if (userRepository.findByToken(user.getToken()).getIdGroup() != 1) {
+            userResponse.setCode("004");
+            userResponse.setMessage("Không đủ quyền");
+        }else {
+            userRepository.findByEmail(user.getEmail()).setStatus(3);
+            userResponse.setCode("000");
+            userResponse.setMessage("Success !");
+        }
+        return userResponse;
+    }
+
+    public UserResponse blockUser(User user){// gửi thông tin email của người cần phê duyệt và token của người đang phê duyệt
+        if(userRepository.findByToken(user.getToken()) == null){
+            userResponse.setCode("003");
+            userResponse.setMessage("Sai token");
+        } else if (userRepository.findByToken(user.getToken()).getIdGroup() != 1 || userRepository.findByEmail(user.getEmail()).getIdGroup() == 1) {
+            userResponse.setCode("004");
+            userResponse.setMessage("Không đủ quyền");
+        }else {
+            userRepository.findByEmail(user.getEmail()).setStatus(2);
+            userResponse.setCode("000");
+            userResponse.setMessage("Success !");
+        }
+        return userResponse;
+    }
+
 
 }
