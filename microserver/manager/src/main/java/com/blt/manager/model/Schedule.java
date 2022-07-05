@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "user")
+@Table(name = "schedule")
 public class Schedule implements Serializable {
 
     private static final long serialVersionUID = 7L;
@@ -15,9 +15,9 @@ public class Schedule implements Serializable {
     private static final String MY_TIME_ZONE="Asia/Ho_Chi_Minh";
 
     @Id
-    @Column(name = "id_shedule")
+    @Column(name = "id_schedule")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idShedule;
+    private int idSchedule;
 
     @Column(name = "id_subject")
     private int idSubject;
@@ -36,12 +36,21 @@ public class Schedule implements Serializable {
     @Column(name = "lecturers")
     private String lecturers;
 
-    public int getIdShedule() {
-        return idShedule;
+    public Schedule(int idSchedule, int idSubject, Date timeStart, Date timeEnd, int numberOfStudents, String lecturers) {
+        this.idSchedule = idSchedule;
+        this.idSubject = idSubject;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.numberOfStudents = 0;
+        this.lecturers = lecturers;
     }
 
-    public void setIdShedule(int idShedule) {
-        this.idShedule = idShedule;
+    public int getIdSchedule() {
+        return idSchedule;
+    }
+
+    public void setIdSchedule(int idSchedule) {
+        this.idSchedule = idSchedule;
     }
 
     public int getIdSubject() {
