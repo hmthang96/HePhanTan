@@ -33,8 +33,8 @@ public class StudentServiceImpl implements StudentService {
   }
 
   @Override
-  public Mono<Student> findAllWithDocument(Integer number) {
-    return dao.findByNumberOfDocument(number);
+  public Mono<Student> findAllWithMejor(Integer mejor) {
+    return dao.findByNumberOfDocument(mejor);
   }
 
   @Override

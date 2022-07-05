@@ -13,11 +13,9 @@ public interface StudentService {
 
   public Flux<Student> findAllWithName(String name);
 
-  public Flux<Student> findAllWithDate(LocalDate firstDate, LocalDate secondDate);
-
-  public Mono<Student> findAllWithDocument(Integer number);
-
   public Mono<Student> findById(String id);
+
+  public Mono<Student> findByMejor(String mejor);
 
   public Mono<Student> save(Student student);
 

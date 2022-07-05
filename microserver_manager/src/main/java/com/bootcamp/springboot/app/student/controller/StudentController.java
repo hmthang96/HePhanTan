@@ -62,7 +62,7 @@ public class StudentController {
   
   /** Extra javadoc (ignored). */
   public Mono<Student> getIdStudentAlternative() throws ParseException {
-    Date myDate = new SimpleDateFormat("yyyy-MM-dd").parse("2000-01-01");
+    Date myDate = new SimpleDateFormat("dd-MM-yyyy").parse("1997-01-01");
     Student student1 = new Student("fallo", "masculino", myDate, "DNI", 12312312);
     Mono<Student> student = Mono.just(student1);
 
@@ -86,6 +86,15 @@ public class StudentController {
     return student;
   }
 
+  public Mono<Student> showMejor(@PathVariable String mejor) throws Exception {
+
+    Flux<Student> students = dao.findAllWithMejor();
+    Mono<Student> student = students.filter(p -> p.getMejor().equals(mejor)).next()
+        .doOnNext(p -> log.info(p.getFullName()));
+
+    return student;
+  }
+
 
   @ApiOperation(value = "Get one Student", notes = "Returns one student searched by name")
   @ApiResponses({
@@ -103,11 +112,6 @@ public class StudentController {
   @ApiResponses({
       @ApiResponse(code = 200, message = "Exits one student")
       })
-  @GetMapping("/document/{document}")
-  public Mono<Student> showDocument(@PathVariable Integer document) {
-
-    return service.findAllWithDocument(document);
-  }
 
   /** Extra javadoc (ignored). */
   @GetMapping("/date/{dateInit}/{dateEnd}")
