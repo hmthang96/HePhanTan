@@ -39,12 +39,14 @@ public class Student {
   
   /** Extra javadoc (ignored). */
   public Student(String fullName, String gender, Date birthDate, String typeOfDocument,
-      Integer numberOfDocument) {
+      Integer numberOfDocument, float score, float id) {
     this.fullName = fullName;
     this.gender = gender;
     this.birthDate = birthDate;
     this.typeOfDocument = typeOfDocument;
     this.numberOfDocument = numberOfDocument;
+    this.score = score;
+    this.id = id;
   }
 
   
@@ -96,6 +98,20 @@ public class Student {
     this.numberOfDocument = numberOfDocument;
   }
 
+  public String getScore() {
+    return score;
+  }
 
+  public void setScore(String score) {
+    this.score = score;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
 }

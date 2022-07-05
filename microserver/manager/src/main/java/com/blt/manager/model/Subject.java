@@ -2,11 +2,12 @@ package com.blt.manager.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "subject")
 public class Subject implements Serializable {
-    private static final long serialVersionUID = 8L;
+    private static final long serialVersionUID = 3L;
 
     @Id
     @Column(name = "id_subject")

@@ -37,10 +37,11 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/api/students")
 @Api(value = "students", description = "Students API", produces = "application/json")
-public class StudentController {
+public class StudentController{
 
   public static Logger log = LoggerFactory.getLogger(StudentController.class);
 
+  private CallbackApi callbackApi = new CallbackApi();
 
   @Autowired
   private StudentService service;
@@ -54,23 +55,20 @@ public class StudentController {
   })
   @GetMapping()
   Flux<Student> index() {
+    callbackApi.resOneStudent()
     Flux<Student> students = dao.findAll().doOnNext(p -> log.info(p.getFullName()));
     return students;
   }
 
-  
-  
   /** Extra javadoc (ignored). */
   public Mono<Student> getIdStudentAlternative() throws ParseException {
-    Date myDate = new SimpleDateFormat("yyyy-MM-dd").parse("2000-01-01");
+    Date myDate = new SimpleDateFormat("dd-MM-yyyy").parse("1997-01-01");
     Student student1 = new Student("fallo", "masculino", myDate, "DNI", 12312312);
     Mono<Student> student = Mono.just(student1);
 
     return student;
   }
 
-
-  
   /** Extra javadoc (ignored). */
   @ApiOperation(value = "Get one Student", notes = "Returns one student searched by Id")
   @ApiResponses({
@@ -86,6 +84,15 @@ public class StudentController {
     return student;
   }
 
+  public Mono<Student> showMejor(@PathVariable String mejor) throws Exception {
+
+    Flux<Student> students = dao.findAllWithMejor();
+    Mono<Student> student = students.filter(p -> p.getMejor().equals(mejor)).next()
+        .doOnNext(p -> log.info(p.getFullName()));
+
+    return student;
+  }
+
 
   @ApiOperation(value = "Get one Student", notes = "Returns one student searched by name")
   @ApiResponses({
@@ -93,7 +100,7 @@ public class StudentController {
     })
   @GetMapping("/name/{name}")
   public Flux<Student> showName(@PathVariable String name) {
-
+    callbackApi.resOneStudentByName()
     return service.findAllWithName(name);
   }
 
@@ -103,11 +110,6 @@ public class StudentController {
   @ApiResponses({
       @ApiResponse(code = 200, message = "Exits one student")
       })
-  @GetMapping("/document/{document}")
-  public Mono<Student> showDocument(@PathVariable Integer document) {
-
-    return service.findAllWithDocument(document);
-  }
 
   /** Extra javadoc (ignored). */
   @GetMapping("/date/{dateInit}/{dateEnd}")
@@ -131,7 +133,7 @@ public class StudentController {
     })
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public Mono<Student> saving(@RequestBody Student student) {
+  public Mono<Student> saving(@RequestBody Student student) {=
     return service.save(student);
   }
   
@@ -144,6 +146,7 @@ public class StudentController {
   @DeleteMapping("/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
   public Mono<String> deleting(@PathVariable String id) {
+    callbackApi.resDelStudent();
     return service.findById(id).defaultIfEmpty(new Student()).flatMap(s -> {
       if (s.getId() == null) {
         return Mono.error(new InterruptedException("The student doesnt exist"));
