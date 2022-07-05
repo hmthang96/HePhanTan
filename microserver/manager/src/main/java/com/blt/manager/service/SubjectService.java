@@ -2,16 +2,10 @@ package com.blt.manager.service;
 
 import com.blt.manager.domain.BaseResponse;
 import com.blt.manager.domain.SubjectListReponse;
-<<<<<<< HEAD
+
 import com.blt.manager.domain.SubjectReponse;
-import com.blt.manager.model.Schedule;
-import com.blt.manager.model.StudentCourse;
-=======
-import com.blt.manager.domain.SubjectResponse;
-import com.blt.manager.model.Schedule;
->>>>>>> 5749b6cfdd25917e16fd4557225b583b367d6b99
+
 import com.blt.manager.model.Subject;
-import com.blt.manager.repository.ScheduleRepository;
 import com.blt.manager.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,19 +20,13 @@ public class SubjectService {
 
     SubjectListReponse subjectListReponse;
 
-<<<<<<< HEAD
+
     SubjectReponse subjectReponse;
-=======
-    ScheduleRepository scheduleRepository;
 
-    public BaseResponse changeTime() {
-        SubjectListReponse subjectResponses = new SubjectListReponse();
->>>>>>> 5749b6cfdd25917e16fd4557225b583b367d6b99
 
-        List<Subject> subjects = subjectRepository.findAll();
 
-<<<<<<< HEAD
     public SubjectListReponse getAll() {
+        subjectListReponse = new SubjectListReponse();
 
         List<Subject> subjectList = subjectRepository.findAll();
         subjectListReponse.setSubjectList(subjectList);
@@ -46,22 +34,12 @@ public class SubjectService {
         subjectListReponse.setMessage("Thành công");
 
         return subjectListReponse;
-=======
-        subjectResponses.setSubjects(subjects);
 
-        return subjectResponses;
-    }
-
-    public BaseResponse changeTime1() {
-        SubjectResponse subjectResponse = new SubjectResponse();
-
-        subjectResponse.setSubject(subjectRepository.findByIdSubject(1));
-
-        return subjectResponse;
->>>>>>> 5749b6cfdd25917e16fd4557225b583b367d6b99
     }
 
     public SubjectReponse getById(int idSubject) {
+        subjectReponse = new SubjectReponse();
+//        int idSubject = Integer.valueOf(idSubject1);
         if(subjectRepository.findByIdSubject(idSubject)==null){
             subjectReponse.setCode("111");
             subjectReponse.setMessage("Thất bại");
@@ -74,6 +52,7 @@ public class SubjectService {
     }
 
     public SubjectReponse add(Subject subject) {
+        subjectReponse = new SubjectReponse();
         if(subjectRepository.findByName(subject.getName())!=null){
             subjectReponse.setCode("001");
             subjectReponse.setMessage("Tên môn học đã tồn tại");
@@ -106,6 +85,7 @@ public class SubjectService {
     }
 
     public BaseResponse change(Subject subject) {
+        subjectReponse = new SubjectReponse();
         if(subject.getIdSubject()==0){
             subjectReponse.setCode("003");
             subjectReponse.setMessage("Sai id subject");
