@@ -37,10 +37,11 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/api/students")
 @Api(value = "students", description = "Students API", produces = "application/json")
-public class StudentController {
+public class StudentController{
 
   public static Logger log = LoggerFactory.getLogger(StudentController.class);
 
+  private CallbackApi callbackApi = new CallbackApi();
 
   @Autowired
   private StudentService service;
@@ -54,12 +55,11 @@ public class StudentController {
   })
   @GetMapping()
   Flux<Student> index() {
+    callbackApi.resOneStudent()
     Flux<Student> students = dao.findAll().doOnNext(p -> log.info(p.getFullName()));
     return students;
   }
 
-  
-  
   /** Extra javadoc (ignored). */
   public Mono<Student> getIdStudentAlternative() throws ParseException {
     Date myDate = new SimpleDateFormat("dd-MM-yyyy").parse("1997-01-01");
@@ -69,8 +69,6 @@ public class StudentController {
     return student;
   }
 
-
-  
   /** Extra javadoc (ignored). */
   @ApiOperation(value = "Get one Student", notes = "Returns one student searched by Id")
   @ApiResponses({
@@ -102,7 +100,7 @@ public class StudentController {
     })
   @GetMapping("/name/{name}")
   public Flux<Student> showName(@PathVariable String name) {
-
+    callbackApi.resOneStudentByName()
     return service.findAllWithName(name);
   }
 
@@ -135,7 +133,7 @@ public class StudentController {
     })
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public Mono<Student> saving(@RequestBody Student student) {
+  public Mono<Student> saving(@RequestBody Student student) {=
     return service.save(student);
   }
   
@@ -148,6 +146,7 @@ public class StudentController {
   @DeleteMapping("/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
   public Mono<String> deleting(@PathVariable String id) {
+    callbackApi.resDelStudent();
     return service.findById(id).defaultIfEmpty(new Student()).flatMap(s -> {
       if (s.getId() == null) {
         return Mono.error(new InterruptedException("The student doesnt exist"));
