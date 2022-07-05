@@ -7,10 +7,10 @@ import java.sql.SQLException;
 public class getConnectionDAO {
     public Connection getConnectionDAO() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/studentdb";
-            String user = "root";
-            String password = "Missroine12";
+            Class.forName(resourceBundle.getString("driverName"));
+            String url = resourceBundle.getString("url");
+            String user = resourceBundle.getString("user");
+            String password = resourceBundle.getString("password");
             return DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException | SQLException e) {
             // TODO Auto-generated catch block
