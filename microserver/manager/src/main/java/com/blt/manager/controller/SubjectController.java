@@ -16,8 +16,10 @@ public class SubjectController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("/changeTime")
-    public ResponseEntity<BaseResponse> changeTime(@RequestBody String mssv) {
+    public ResponseEntity<BaseResponse> changeTime() {
 
-        return ResponseEntity.ok(subjectService.changeTime(mssv));
+        return ResponseEntity.ok(subjectService.changeTime1());
     }
+
+
 }
