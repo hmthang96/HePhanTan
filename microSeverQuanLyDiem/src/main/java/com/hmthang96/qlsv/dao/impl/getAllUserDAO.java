@@ -3,6 +3,7 @@ package com.hmthang96.qlsv.dao.impl;
 import com.hmthang96.qlsv.dao.IGetAllUserDAO;
 import com.hmthang96.qlsv.model.UserModel;
 
+import javax.swing.tree.RowMapper;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,5 +37,30 @@ public class getAllUserDAO extends getConnectionDAO implements IGetAllUserDAO {
             }
         }
         return results;
+    }
+
+    @Override
+    public UserModel findByUserNameAndPasswordAndStatus(String userName, String password, Integer status) {
+        return null;
+    }
+
+    @Override
+    public List query(String sql, RowMapper rowMapper, Object... parameters) {
+        return null;
+    }
+
+    @Override
+    public void update(String sql, Object... parameters) {
+
+    }
+
+    @Override
+    public Long insert(String sql, Object... parameters) {
+        return null;
+    }
+
+    @Override
+    public int count(String sql, Object... parameters) {
+        return 0;
     }
 }

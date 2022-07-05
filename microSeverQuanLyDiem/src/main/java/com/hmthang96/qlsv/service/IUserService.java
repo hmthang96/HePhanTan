@@ -1,10 +1,7 @@
-package com.hmthang96.qlsv.dao;
+package com.hmthang96.qlsv.service;
 
 import com.hmthang96.qlsv.model.UserModel;
 
-import java.util.List;
-
-public interface IGetAllUserDAO extends GenericDAO {
-    List<UserModel> findAll();
+public interface IUserService {
     UserModel findByUserNameAndPasswordAndStatus(String userName, String password, Integer status);
 }
