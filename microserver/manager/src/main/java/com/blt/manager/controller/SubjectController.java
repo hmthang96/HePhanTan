@@ -17,6 +17,7 @@ public class SubjectController {
     private SubjectService subjectService;
 
     @CrossOrigin(origins = "*")
+<<<<<<< HEAD
     @PostMapping("/getAll")
     public ResponseEntity<BaseResponse> getAll(){
 
@@ -43,5 +44,13 @@ public class SubjectController {
 
         return ResponseEntity.ok(subjectService.change(subject));
     }
+=======
+    @PostMapping("/changeTime")
+    public ResponseEntity<BaseResponse> changeTime() {
+
+        return ResponseEntity.ok(subjectService.changeTime1());
+    }
+
+>>>>>>> 5749b6cfdd25917e16fd4557225b583b367d6b99
 
 }

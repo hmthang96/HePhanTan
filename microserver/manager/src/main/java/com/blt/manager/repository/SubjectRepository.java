@@ -10,8 +10,12 @@ import java.util.List;
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject,Integer> {
 
+<<<<<<< HEAD
     List<Subject> findAll();
     Subject save(Subject subject);
+=======
+    Subject findByIdSubject(int id);
+>>>>>>> 5749b6cfdd25917e16fd4557225b583b367d6b99
 
     Subject findByName(String name);
 
@@ -19,4 +23,5 @@ public interface SubjectRepository extends JpaRepository<Subject,Integer> {
 
     Subject findByIdSubject(int id);
 
+    List<Subject> findAll();
 }
