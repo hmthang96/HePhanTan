@@ -1,17 +1,17 @@
 const mysql = require('mysql');
 
 const config = {
-    host: 'db',
+    host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'root',
+    password: 'hainam2619',
     database: 'FindRoom',
 };
 
 const pool = mysql.createPool(config);
 
 pool.getConnection(err => {
-    if (err) console.log(err);
+    if (err) process.exit(1);
     else console.log('Server Connected!...');
 });
 
