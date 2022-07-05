@@ -4,6 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 
+const student = require('./routers/student');
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -15,6 +17,7 @@ const checkHealth = (req, res) => {
 };
 
 app.get('/', checkHealth);
+app.use('/', student);
 
 app.listen(PORT_SERVICE_STUDENT, err => {
     if (err) console.log(err);
