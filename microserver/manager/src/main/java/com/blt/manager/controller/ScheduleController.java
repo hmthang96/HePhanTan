@@ -18,6 +18,8 @@ public class ScheduleController {
     @Autowired
     private ScheduleService scheduleService ;
 
+
+
     @CrossOrigin(origins = "*")
     @PostMapping("/findAll")
     public ResponseEntity<ScheduleListReponse> findAll(){
@@ -29,5 +31,18 @@ public class ScheduleController {
     public ResponseEntity<ScheduleReponse> changeTimeStudy(@RequestBody Schedule schedule){
         return ResponseEntity.ok(scheduleService.changeTimeStudy(schedule));
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/add")
+    public ResponseEntity<ScheduleReponse> add(@RequestBody Schedule schedule){
+        return ResponseEntity.ok(scheduleService.add(schedule));
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/delete")
+    public ResponseEntity<ScheduleReponse> delete(@RequestBody Schedule schedule){
+        return ResponseEntity.ok(scheduleService.delete(schedule));
+    }
+
 
 }

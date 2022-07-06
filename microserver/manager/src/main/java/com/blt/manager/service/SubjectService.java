@@ -5,6 +5,7 @@ import com.blt.manager.domain.SubjectListReponse;
 
 import com.blt.manager.domain.SubjectReponse;
 
+import com.blt.manager.model.Schedule;
 import com.blt.manager.model.Subject;
 import com.blt.manager.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,11 @@ public class SubjectService {
     }
 
     public SubjectReponse add(Subject subject) {
+        System.out.println(subject.getIdSubject());
+        System.out.println(subject.getName());
+        System.out.println(subject.getCourseCode());
+        System.out.println(subject.getCourseCredits());
+        System.out.println(subject.getTuitionCredits());
         subjectReponse = new SubjectReponse();
         if(subjectRepository.findByName(subject.getName())!=null){
             subjectReponse.setCode("001");
@@ -59,10 +65,7 @@ public class SubjectService {
         }else if(subjectRepository.findByCourseCode(subject.getCourseCode())!=null){
             subjectReponse.setCode("002");
             subjectReponse.setMessage("Mã học phần đã tồn tại");
-        } else if(subject.getIdSubject()==0){
-            subjectReponse.setCode("003");
-            subjectReponse.setMessage("Sai id subject");
-        }else if (subject.getCourseCode()==null){
+        } else if (subject.getCourseCode()==null){
             subjectReponse.setCode("004");
             subjectReponse.setMessage("Thiếu mã môn học");
         } else if (subject.getName() == null) {
@@ -110,4 +113,32 @@ public class SubjectService {
         return subjectReponse;
     }
 
+    public SubjectReponse delete(Subject subject) {
+        subjectReponse = new SubjectReponse();
+        Subject subject1 = subjectRepository.findByIdSubject(subject.getIdSubject());
+        if (subject1 == null){
+            subjectReponse.setCode("022");
+            subjectReponse.setMessage("môn học không tồn tại");
+        } else if (subject.getName().equals(subject1.getName())) {
+            subjectReponse.setCode("023");
+            subjectReponse.setMessage("không trùng tên môn học");
+        } else if (subject.getCourseCode().equals(subject1.getCourseCode())) {
+            subjectReponse.setCode("024");
+            subjectReponse.setMessage("không trùng mã học");
+        } else if (subject.getCourseCredits().equals(subject1.getCourseCredits())) {
+            subjectReponse.setCode("025");
+            subjectReponse.setMessage("không trùng tín học phần");
+        } else if (subject.getTuitionCredits().equals(subject1.getTuitionCredits())) {
+            subjectReponse.setCode("026");
+            subjectReponse.setMessage("không trùng tín học phí");
+        } else {
+            subjectReponse.setCode("000");
+            subjectReponse.setMessage("Thành công");
+            subjectReponse.setSubject(subject1);
+            subjectRepository.delete(subject1);
+        }
+
+
+        return subjectReponse;
+    }
 }
