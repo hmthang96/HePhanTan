@@ -10,6 +10,9 @@ import java.util.List;
 public interface ScheduleRepository extends JpaRepository<Schedule,Integer> {
     Schedule findByIdSchedule(int id);
 
+    Schedule findByIdSubject(int id);
+
+
 
 
     List<Schedule> findAll();

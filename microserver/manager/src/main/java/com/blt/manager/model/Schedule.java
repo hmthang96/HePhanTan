@@ -36,6 +36,10 @@ public class Schedule implements Serializable {
     @Column(name = "lecturers")
     private String lecturers;
 
+    public Schedule() {
+        this.idSchedule = 0;
+    }
+
     public Schedule(int idSchedule, int idSubject, Date timeStart, Date timeEnd, int numberOfStudents, String lecturers) {
         this.idSchedule = idSchedule;
         this.idSubject = idSubject;

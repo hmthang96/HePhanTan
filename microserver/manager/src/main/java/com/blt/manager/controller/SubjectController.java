@@ -29,17 +29,23 @@ public class SubjectController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("/add")
-    public ResponseEntity<BaseResponse> add(Subject subject){
+    public ResponseEntity<BaseResponse> add(@RequestBody Subject subject){
 
         return ResponseEntity.ok(subjectService.add(subject));
     }
 
     @CrossOrigin(origins = "*")
     @PostMapping("/change")
-    public ResponseEntity<BaseResponse> change(Subject subject){
+    public ResponseEntity<BaseResponse> change(@RequestBody Subject subject){
 
         return ResponseEntity.ok(subjectService.change(subject));
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/delete")
+    public ResponseEntity<BaseResponse> delete(@RequestBody Subject subject){
+
+        return ResponseEntity.ok(subjectService.delete(subject));
+    }
 
 }
