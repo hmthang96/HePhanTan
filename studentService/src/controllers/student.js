@@ -14,7 +14,31 @@ const create = async (req, res) => {
     res.status(200).send(result);
 };
 
+const getById = async (req, res) => {
+    const { id } = req.params;
+    const result = await student.getById(id);
+
+    res.status(200).send(result);
+}
+
+const update = async (req, res) => {
+    const {id} = req.params;
+    const result = await student.update(req.body, id);
+
+    res.status(200).send(result);
+}
+
+const deleteById = async (req, res) => {
+    const {id} = req.params;
+    const result = await student.deleteById(id);
+
+    res.status(200).send(result);
+}
+
 module.exports = {
     getAll,
-    create
+    getById,
+    create,
+    update,
+    deleteById
 }
