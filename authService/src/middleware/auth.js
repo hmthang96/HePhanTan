@@ -1,4 +1,3 @@
-const e = require('express');
 const security = require('../utilities/security');
 
 const reqLogin = (req, res, next) => {
